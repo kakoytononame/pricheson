@@ -1,0 +1,41 @@
+﻿.blockforfioanddate{
+    margin:100px auto;
+    text-align:center;
+    display:block;
+    
+}
+.firsttext {
+    margin: 30px auto;
+    display: inherit;
+    color: white;
+    font-size: 100%;
+    font-size: 1.25rem;
+}
+.FIO {
+    width: 400px;
+    height: 60px;
+    margin: 30px auto;
+    display: inherit;
+    border-radius:30px;
+}
+.secondtext {
+    margin: 30px auto;
+    display: inherit;
+    color: white;
+    font-size: 100%;
+    font-size: 1.25rem;
+}
+.phonenumber {
+    width: 400px;
+    height: 60px;
+    margin: 30px auto;
+    display: inherit;
+    border-radius:30px;
+}
+.finishofzapis{
+    width:200px;
+    height:50px;
+    border-radius:20px;
+    margin:30px auto;
+}
+

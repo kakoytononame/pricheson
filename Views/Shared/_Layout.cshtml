@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="yandex-verification" content="6ae618bf50919cdf" />
+    <title>@ViewData["Title"]pricheson</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/pricheson.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/slick.css" asp-append-version="true"/>
+    <link rel="stylesheet" href="~/css/zapisi.css" asp-append-version="true"/>
+    <link rel="stylesheet" href="~/css/jquery-ui.css" asp-append-version="true"/>
+    <link rel="stylesheet" href="~/css/jquery-ui.structure.css" asp-append-version="true"/>
+    <link rel="stylesheet" href="~/css/jquery-ui.theme.css" asp-append-version="true"/>
+    <link rel="stylesheet" href="~/css/secretpage.css" asp-append-version="true"/>
+    <link rel="stylesheet" href="~/css/fioandphone.css" asp-append-version="true"/>
+    <link rel='stylesheet' type='text/css' href='/css/main.css' />
+
+    
+
+</head>
+<body>
+
+    <script src="~/js/jquery.js"></script>
+    <script src="~/js/jquery-ui.js"></script>
+    
+ @RenderBody()
+        
+
+  
+
+
+    <script type='text/javascript' src='/js/main.js'></script>
+    <script type='text/javascript' src='/js/ru.js'></script>
+    <script src="~/js/slick.min.js"></script>
+    @*<script src="~/js/script.js"></script>*@
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="~/js/secretpage.js" asp-append-version="true"></script>
+    <script src="~/js/ZapisiforBD.js" asp-append-version="true"></script>
+    
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

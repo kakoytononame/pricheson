@@ -1,0 +1,300 @@
+﻿
+.main-block {
+    position: relative;
+    width: 800px;
+    height: 500px;
+    background-color: #4076C6;
+    margin:10% auto;
+    overflow-y:hidden;
+    -webkit-overflow-scrolling: touch;
+    z-index: 1000;
+    border-radius: 20px;
+    display:inline-flex;
+}
+.upstring{
+    width: 100%;
+    height: 50px;
+    display:none;
+}
+.upstring1{
+    width: 50%;
+    height: 50px;
+    text-align: left;
+    position: absolute;
+    display: inline-block;
+    right: 50%;
+}
+.upstring2{
+    width: 50%;
+    height: 50px;
+    text-align: right;
+    position: absolute;
+    display:inline-block;
+    left:50%;
+}
+.downstring{
+    width: 100%;
+    text-align: center;
+}
+.closeblock {
+    background-image: url(../img/img_229857.png);
+    width: 35px;
+    height: 35px;
+    /* left: 94%;
+    bottom: 94%; */
+    margin: 5px 5px 0 0 ;
+    position: relative;
+    background-size: 100%;
+}
+.back1{
+    margin: 5px 0 0 5px;
+}
+.next{
+    z-index: 999999;
+    width: 150px;
+    height: 50px;
+    align-self: center;
+    /* top:80%; */
+    position: relative;
+    border-radius: 50px;
+    background-color: darksalmon;
+    margin:20px;
+    
+}
+.firstcontainer {
+    vertical-align: middle;
+    width:50%;
+
+    justify-content:center;
+    text-align:center;
+    flex-direction:column;
+}
+.secondcontainer {
+    vertical-align: middle;
+    width: 50%;
+
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+}
+.masters {
+    position: relative;
+    width: 328px;
+    height: 328px;
+    z-index: 150;
+    background-color: #E7D4FF;
+    background-image: url('../img/🦆 illustration _Wavy hair woman girl_.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 100%;
+    margin: 50px 0 0 35px;
+}
+
+.masterstext {
+    position:relative;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: white;
+    /* font-size: 55   px; */
+    font-size: 30px;
+    text-align:center;
+    margin: 0;
+    padding: 0;
+    display:inline-block;
+    height:contain;
+}
+
+.services {
+    vertical-align: middle;
+    position: relative;
+    width: 328px;
+    height: 328px;
+    z-index: 150;
+    background-color: #E7D4FF;
+    background-image: url('../img/🦆 icon _scissors_.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 100%;
+    margin: 50px 0 0 35px;
+}
+
+.servicestext {
+    position: relative;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: white;
+    /* font-size: 55   px; */
+    font-size: 30px;
+    width: 150px;
+    margin: auto;
+    padding: 0;
+    text-align:center;
+}
+.allcontainerforchoise{
+    margin-top: 0;
+    height: inherit;
+    margin:auto;
+    text-align:center;
+}
+.containerforchoise{
+    width: 40%;
+    height: 75px;
+    background-color: rgb(247, 232, 214);
+    border-radius: 50px;
+    border: none;
+    vertical-align: middle;
+    text-align: left;
+    margin: 20px 20px;
+    display: inline-flex;
+    align-items: center;
+}
+.conatinerforchoseheader{
+    width: 100%;
+    height: 20px;
+    font-size: 32px;
+    text-align: center;
+    margin-bottom: 40px;
+    color:white;
+}
+
+.textforcheck{
+    font-size: 18px;
+    vertical-align:middle;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    height: 50px;
+}
+.check1{
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+    margin:0 10px;
+}
+.textforcheck span span{
+margin: 0 4px;
+}
+.masterscontainer{
+    width: 80%;
+    
+    margin: 0 auto;
+}
+.masterscontainerheader{
+    width: 100%;
+    height: 20px;
+    font-size: 32px;
+    text-align: center;
+    margin-bottom: 30px;
+    color:white;
+}
+.specialists{
+    position:relative;
+    display:inline-block;
+    margin: 8px auto;
+    width: 48%;
+    height: 200px;
+    background-color: rgb(247, 233, 233);
+    border-radius: 100%;
+    border: none;
+    text-align: left;
+    gap:15px;
+    vertical-align: middle;
+    z-index: 120;
+
+}
+.faces{
+    position:relative;
+    display:inline-flex;
+    width: 100px;
+    height: 100px;
+    border-radius:360px;
+    margin:-55px 0 0 20px;
+    
+}
+.textforspec {
+    font-family: 'Comfortaa', cursive;
+    width:100px;
+    margin: 55px auto;
+    display:inline-block;
+    font-size: 1.25rem;
+}
+.allelements1 .element1::before {
+    margin-left: 10px;
+}
+.timeanddate{
+    width: 80%;
+    
+    margin: 0 auto;
+    
+}
+.stringofday {
+    width: 80%;
+    height: 150px;
+    background-color: #E7D4FF;
+    margin: 30px auto;
+    text-align: center;
+    vertical-align: middle;
+    border-style: inset;
+    border-color: black;
+    border-radius: 30px;
+}
+.dayofweek{
+    font-family: 'Comfortaa', cursive;
+    margin:0 auto;
+    font-size: calc(10px + 1vw);
+    display: block;
+    
+}
+.textforcheckfordate{
+    font-size: 18px;
+}
+.time{
+    margin: 10px 0 0 10px;
+    background-color:white;
+    width: 80px;
+    height: 30px;
+    border-style:ridge;
+    display:inline-block;
+    border-radius:30px;
+}
+.dayofweek span{
+    margin: 0 15px;
+    }
+.dayanddate-bottom{
+width: 100%;
+text-align: center;
+}
+.zapisbutton{
+    
+    width: 150px;
+    height: 50px;
+    background-color: cornsilk;
+    margin: 20px auto;
+}
+@media (min-width:300px) and (max-width:750px) {
+    .main-block{
+        height:600px;
+        width:350px;
+        flex-direction:column;
+    }
+    .firstcontainer {
+        width: 350px;
+        height:300px;
+
+    }
+    .masters{
+        width:200px;
+        height:200px;
+        margin:50px auto 0 auto;
+        background-size:auto;
+    }
+    .secondcontainer {
+        width: 350px;
+        height: 300px;
+    }
+
+    .services {
+        width: 200px;
+        height: 200px;
+        margin: 50px auto 0 auto;
+    }
+
+}

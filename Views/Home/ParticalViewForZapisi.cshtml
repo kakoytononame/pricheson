@@ -1,0 +1,188 @@
+﻿@using System.Globalization
+@using pricheson.Models;
+@model Sendingfreetime;
+<div class="timeanddate">
+    @{
+        List<string> daysofweek = new List<string>();
+        for(int i = 0; i < 7-(int)DateTime.Today.DayOfWeek; i++)
+        {
+            daysofweek.Add(CultureInfo.CurrentCulture.DateTimeFormat.GetDayName(DateTime.Today.DayOfWeek+i).Substring(0, 1).ToUpper()+CultureInfo.CurrentCulture.DateTimeFormat.GetDayName(DateTime.Today.DayOfWeek+i).Substring(1));
+        }
+        for(int i = -(int)DateTime.Today.DayOfWeek; i < 0 ; i++)
+        {
+            daysofweek.Add(CultureInfo.CurrentCulture.DateTimeFormat.GetDayName(DateTime.Today.DayOfWeek+i).Substring(0, 1).ToUpper()+CultureInfo.CurrentCulture.DateTimeFormat.GetDayName(DateTime.Today.DayOfWeek+i).Substring(1));
+        }
+
+    }
+    <div class="stringofday">
+        @{
+            int checkboxnumber = 0;
+            if(Model.day1 is null)
+            {
+                <label class="dayofweek">@daysofweek[0]<span>В данный день нет времени для записи</span></label>
+            }
+            else
+            {
+                <label class="dayofweek">@daysofweek[0]<span>@(Model.day1[0].Remove(10))</span></label>
+                @foreach(var item in Model.day1)
+                {
+            
+                <div class="time">
+                    <input type="radio" name="contact" class="checkfordate" id=@("check"+checkboxnumber)>
+                    <label class="textforcheckfordate" for=@("check"+checkboxnumber)>@item.Substring(item.IndexOf(" ")+" ".Length).Remove(5)</label>
+                </div>
+                checkboxnumber++;
+                }
+        
+                }
+            }
+            
+            </div>
+            <div class="stringofday">
+            @{
+                if(Model.day2 is null)
+                {
+                <label class="dayofweek">@daysofweek[1]<span>В данный день нет времени для записи</span></label>
+                }
+                else
+                {
+                <label class="dayofweek">@daysofweek[1]<span>@(Model.day2[0].Remove(10))</span></label>
+                @foreach(var item in Model.day2)
+                {
+                <div class="time">
+                    <input type="radio" name="contact" class="checkfordate" id=@("check"+checkboxnumber)>
+                    <label class="textforcheckfordate" for=@("check"+checkboxnumber)>@item.Substring(item.IndexOf(" ")+" ".Length).Remove(5)</label>
+                </div>
+                checkboxnumber++;
+                }
+                
+                }
+            }
+                
+        
+                
+            </div>
+            <div class="stringofday">
+        @{
+            if(Model.day3 is null)
+            {
+                <label class="dayofweek">@daysofweek[2]<span>В данный день нет времени для записи</span></label>
+            }
+            else
+            {
+                <label class="dayofweek">@daysofweek[2]<span>@(Model.day3[0].Remove(10))</span></label>
+                @foreach(var item in Model.day3)
+                {
+            
+                <div class="time">
+                    <input type="radio" name="contact" class="checkfordate" id=@("check"+checkboxnumber)>
+                    <label class="textforcheckfordate" for=@("check"+checkboxnumber)>@item.Substring(item.IndexOf(" ")+" ".Length).Remove(5)</label>
+                </div>
+                checkboxnumber++;
+                }
+            }
+        }
+                
+                
+            </div>
+            <div class="stringofday">
+                @{
+            if(Model.day4 is null)
+            {
+                <label class="dayofweek">@daysofweek[3]<span>В данный день нет времени для записи</span></label>
+            }
+            else
+            {
+                <label class="dayofweek">@daysofweek[3]<span>@(Model.day4[0].Remove(10))</span></label>
+                @foreach(var item in Model.day4)
+                {
+            
+            <div class="time">
+                    <input type="radio" name="contact" class="checkfordate" id=@("check"+checkboxnumber)>
+                    <label class="textforcheckfordate" for=@("check"+checkboxnumber)>@item.Substring(item.IndexOf(" ")+" ".Length).Remove(5)</label>
+                </div>
+                checkboxnumber++;
+                }
+            }
+        }
+                
+            </div>
+            <div class="stringofday">
+                @{
+            if(Model.day5 is null)
+            {
+                <label class="dayofweek">@daysofweek[4]<span>В данный день нет времени для записи</span></label>
+            }
+            else
+            {
+                <label class="dayofweek">@daysofweek[4]<span>@(Model.day5[0].Remove(10))</span></label>
+                @foreach(var item in Model.day5)
+                {
+            
+                <div class="time">
+                    <input type="radio" name="contact" class="checkfordate" id=@("check"+checkboxnumber)>
+                    <label class="textforcheckfordate" for=@("check"+checkboxnumber)>@item.Substring(item.IndexOf(" ")+" ".Length).Remove(5)</label>
+                </div>
+                checkboxnumber++;
+                }
+            }
+        }
+                
+            </div>
+            <div class="stringofday">
+                @{
+            if(Model.day6 is null)
+            {
+                <label class="dayofweek">@daysofweek[5]<span>В данный день нет времени для записи</span></label>
+            }
+            else
+            {
+                <label class="dayofweek">@daysofweek[5]<span>@(Model.day6[0].Remove(10))</span></label>
+                
+                @foreach(var item in Model.day6)
+                {
+            
+                <div class="time">
+                    <input type="radio" name="contact" class="checkfordate" id=@("check"+checkboxnumber)>
+                    <label class="textforcheckfordate" for=@("check"+checkboxnumber)>@item.Substring(item.IndexOf(" ")+" ".Length).Remove(5)</label>
+                </div>
+                checkboxnumber++;
+                }
+            }
+        }
+                
+            </div>
+            <div class="stringofday">
+                @{
+            if(Model.day3 is null)
+            {
+                <label class="dayofweek">@daysofweek[6]<span>В данный день нет времени для записи</span></label>
+            }
+            else
+            {
+                <label class="dayofweek">@daysofweek[6]<span>@(Model.day7[0].Remove(10))</span></label>
+                @foreach(var item in Model.day7)
+                {
+            
+                <div class="time">
+                    <input type="radio"  name="contact" class="checkfordate" id=@("check"+checkboxnumber)>
+                    <label class="textforcheckfordate" for=@("check"+checkboxnumber)>@item.Substring(item.IndexOf(" ")+" ".Length).Remove(5)</label>
+                </div>
+                checkboxnumber++;
+                }
+            }
+        }
+                
+            </div>
+            <div class="dayanddate-bottom">
+                <button class="zapisbutton" id="buttonforendzapis">Записаться</button>
+            </div>
+
+        </div>
+
+
+    
+   
+    
+
+

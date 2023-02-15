@@ -1,0 +1,30 @@
+﻿<div class=blockforlogin>
+	<label id="logintext">Введите имя пользователя</label>
+	<input id="login" />
+	<label id="passwordtext">Введите пароль</label>
+	<input id="password" />
+	<button id="entry">Войти</button>
+</div>
+<script>
+	function jsonforautorization(json){
+		var username=document.getElementById('login').value;
+	$.ajax({
+		type: "POST",
+		url: "@Url.Action("PasswordCheck")",
+		data: { id: json },
+		success: function () {
+			//console.log(json);
+			
+			document.location.href = "https://pricheson.tk/Home/Privacy?name="+username;
+
+		},
+		error: function (req, status, error) {
+			console.log(json);
+			console.log(req, status, error);
+			//location.reload();
+		}
+
+	});
+
+};
+</script>

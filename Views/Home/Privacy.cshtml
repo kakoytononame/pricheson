@@ -1,0 +1,175 @@
+﻿@using pricheson.Models;
+@model Supplier;
+@{
+	
+}
+
+<div id='calendar'></div>
+
+<div class="blockforaddtable">
+<button class="changetimetablestart">Включить добавление</button>
+	<label class="betweentable">Добавить запись</label>
+<table class=dbvisuallineforadd>
+	<tr>
+		<td>Номер</td>
+	<td>Мастер</td>
+	<td>Дата</td>
+	<td>Время</td>
+	<td>Услуга</td>
+	<td>Длительность услуги</td>
+	<td>Фио</td>
+	<td>Номер клиента</td>
+	</tr>
+	<tr id=tr99999999999999999>
+		<td id=1></td><td id=2></td><td id=3></td><td id=4></td><td id=5></td><td id=6></td><td id=7></td><td id=8></td>
+	</tr>
+</table>
+<button class="changetimetableadd">Добавить запись</button>
+</div>
+<div class="blockforbdandfunction">
+	<table class="dbvisualline">
+@{int stringid=0;}
+<td id=1>Номер</td>
+<td id=2>Мастер</td>
+<td id=3>Дата</td>
+<td id=4>Время</td>
+<td id=5>Услуга</td>
+<td id=6>Длительность услуги</td>
+<td id=7>Фио</td>
+<td id=8>Номер клиента</td>
+@foreach(var item in Model.timetable){
+
+		if (stringid / 8 < 10)
+		{
+			<tr id=tr@(stringid/8)>
+		<td id=@stringid>@item.Id</td><td id=@(stringid+1)>@item.Mastername</td><td id=@(stringid+2)>@item.Date</td><td id=@(stringid+3)>@item.Time</td><td id=@(stringid+4)>@item.Service</td><td id=@(stringid+5)>@item.Servicedelation</td><td id=@(stringid+6)>@item.Username</td><td id=@(stringid+7)>@item.Userphone</td>
+	</tr>
+	@* <tr id=tr@(stringid)>
+	<td id=@(stringid)>@item.Id</td><td id=@(stringid)>@item.Mastername</td><td id=@(stringid)>@item.Date</td><td id=@(stringid)>@item.Time</td><td id=@(stringid)>@item.Service</td><td id=@(stringid)>@item.Servicedelation</td><td id=@(stringid)>@item.Username</td><td id=@(stringid)>@item.Userphone</td>
+				</tr>*@
+			stringid += 8;
+		}
+		
+		
+
+}
+
+
+</table>
+
+<div class="blockforbuttons">
+<input class="idfordelete" />
+<button class="changetimetabledelete">Удалить строку</button>
+<input class="dateforsorting" />
+<button href="https://pricheson.tk/Home/Privacy" class="sortingtable">Найти по дате</button>
+<button class="changetimetablestart">Включить редактирование</button>
+<button class="changetimetableend">Сохранить отредактированное</button>
+
+</div>
+
+@*<a href="https://pricheson.tk/Home/Privacy?name=саша">Саша</a>
+<a href="https://pricheson.tk/Home/Privacy">очистить фильтры</a>*@
+</div>
+
+<script>
+
+//var calendarEl;
+//	var calendar;
+	var event=[
+		@foreach(var item in Model.timetable){
+			@:{
+			@:id:@item.Id,
+			@:title:"@(item.Service)\n@(" "+item.Username)",
+			@:start:"@(item.Date)T@(item.Time)",           
+			string endtime = Convert.ToString(Convert.ToInt32(item.Time.Remove(item.Time.IndexOf(":")))+Convert.ToInt32(item.Servicedelation.Remove(item.Servicedelation.IndexOf(":"))))+":00:00";
+			@:end:"@(item.Date)T@(endtime)",
+			@:},
+		}
+		
+	];
+	
+	//document.addEventListener('DOMContentLoaded', function () {
+	//	 calendarEl = document.getElementById('calendar');
+	//	 calendar = new FullCalendar.Calendar(calendarEl, {
+	//		initialView: 'dayGridMonth',
+	//		initialDate: '2022-08-07',
+	//		headerToolbar: {
+	//			left: 'prev,next today',
+	//			center: 'title',
+	//			right: 'dayGridMonth,timeGridWeek,timeGridDay'
+	//		 },
+	//		 locale: 'ru',
+	//	 });
+	//	for(let i=0;i<event.length;i++){
+	//		calendar.addEvent( event[i] );
+	//	}
+	//	calendarEl.style.display="none";
+	//	calendar.render();
+	//});
+	var changeenable = 0;
+
+
+function jsonforupdate(json){
+	$(document).ready(function () {
+	$.ajax({
+		type: "POST",
+		url: "@Url.Action("Update")",
+		dataType: "json",
+		data: { id: json },
+		success: function () {
+
+			console.log();
+			location.reload();
+		},
+		error: function (req, status, error) {
+
+			location.reload();
+		}
+
+	});
+});
+};
+function jsonforadd(json){
+	$(document).ready(function () {
+	$.ajax({
+		type: "POST",
+		url: "@Url.Action("Add")",
+		dataType: "json",
+		data: { id: json },
+		success: function () {
+			console.log();
+			location.reload();
+		},
+		error: function (req, status, error) {
+
+			location.reload();
+		}
+
+	});
+});
+};
+function jsonfordelete(json){
+	$(document).ready(function () {
+	$.ajax({
+		type: "POST",
+		url: "@Url.Action("Delete")",
+		dataType: "json",
+		data: { id: json },
+		success: function () {
+			console.log(json);
+			location.reload();
+		},
+		error: function (req, status, error) {
+
+			location.reload();
+		}
+
+	});
+});
+};
+
+
+
+
+
+</script>

@@ -1,0 +1,9 @@
+{
+  "profiles": {
+    "pricheson": {
+      "commandName": "Project",
+      "launchUrl": "https://pricheson.tk/",
+      "applicationUrl": "https://pricheson.tk/"
+    }
+  }
+}
